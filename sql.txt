@@ -1,0 +1,102 @@
+USE [CarDB]
+GO
+
+/****** Object:  Table [dbo].[Products]    Script Date: 5/25/2018 4:07:21 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[Products](
+	[P_Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](50) NULL,
+	[Type] [varchar](50) NULL,
+	[Images] [varchar](128) NULL,
+	[ParentId] [int] NULL,
+	[CreatedOn] [datetime] NULL,
+	[UpdateOn] [date] NULL,
+	[UserId] [int] NULL,
+	[IsDelete] [int] NULL,
+	[IsActive] [int] NULL,
+ CONSTRAINT [PK_Products] PRIMARY KEY CLUSTERED 
+(
+	[P_Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+USE [CarDB]
+GO
+
+/****** Object:  Table [dbo].[Menus]    Script Date: 5/25/2018 4:07:17 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Menus](
+	[M_Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](50) NULL,
+	[Link] [nvarchar](256) NULL,
+	[ParentId] [int] NULL,
+	[CreatedOn] [datetime] NULL,
+	[UpdatedOn] [datetime] NULL,
+	[IsDelete] [int] NULL,
+	[IsActive] [int] NULL,
+ CONSTRAINT [PK_Menus] PRIMARY KEY CLUSTERED 
+(
+	[M_Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+
+USE [CarDB]
+GO
+
+/****** Object:  Table [dbo].[Contacts]    Script Date: 5/25/2018 4:07:11 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[Contacts](
+	[C_Id] [int] IDENTITY(1,1) NOT NULL,
+	[Type] [varchar](50) NULL,
+	[Name] [nvarchar](128) NULL,
+	[Address] [nvarchar](128) NULL,
+	[City] [nvarchar](128) NULL,
+	[Zipcode] [varchar](50) NULL,
+	[Mobile] [varchar](50) NULL,
+	[Email] [varchar](50) NULL,
+	[CreatedOn] [datetime] NULL,
+	[UpdateOn] [datetime] NULL,
+	[IsDelete] [int] NULL,
+	[IsActive] [int] NULL,
+ CONSTRAINT [PK_Contacts] PRIMARY KEY CLUSTERED 
+(
+	[C_Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
